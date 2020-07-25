@@ -144,16 +144,25 @@ function uploadMultiple() {
 
     let uploadMultipleMainType = document.querySelector('#uploadMultipleMainType').value;
 
-    // sessionStorage.setItem("multipleImageLength", image.length);
-
     for (var i = 0; i < image.length; i++) {
         var imageFile = image[i];
-        var mainFile = mainImage[0];
 
-        uploadImageAsPromise(mainFile, imageFile, i, uploadMultipleTitle, uploadMultipleYear, image.length, uploadMultipleVideoLink, uploadMultipleMainType);
+        switch (uploadMultipleMainType) {
+            case 'OpenCeremony':
+                var mainFile = mainImage[0];
+                console.log('OpenCeremony');
+                uploadTheMainType = 'OpenCeremony';
+                uploadImageAsPromise(mainFile, imageFile, i, uploadMultipleTitle, uploadMultipleYear, image.length, uploadMultipleVideoLink, uploadMultipleMainType);
+                break;
+            case 'Exhibitions':
+                console.log('Exhibitions')
+                uploadTheMainType = 'Exhibitions';
+                uploadImageAsPromiseExhibitions(imageFile, uploadMultipleYear, uploadMultipleMainType);
+                break;
+        }
     }
-
 }
+
 var indexUploaded;
 
 //Handle waiting to upload each file using promise
@@ -239,6 +248,54 @@ function uploadImageAsPromise(mainFile, imageFile, index, uploadMultipleTitle, u
                         .catch(function (error) {
                             console.log(error);
                         });
+                });
+            }
+        );
+    });
+}
+
+function uploadImageAsPromiseExhibitions(imageFile, uploadMultipleYear, uploadMultipleMainType) {
+    return new Promise(function (resolve, reject) {
+        var storageRef = firebase.storage().ref('exhibitions/' + imageFile.name);
+
+        // initialize firestore
+        var firestore = firebase.firestore();
+        const db = firestore.collection(uploadMultipleMainType);
+
+        var task = storageRef.put(imageFile);
+
+        //Update progress bar
+        task.on('state_changed',
+            function progress(snapshot) {
+                var percentage = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+                // console.log('Multiple upload is ' + percentage + '% done');
+
+                var div = document.getElementsByClassName('uploadMultipleF')[0];
+
+                div.style.width = percentage + '%';
+
+            },
+            function error(err) {
+                console.log(err);
+            },
+            function () {
+                task.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+                    // console.log('File available at', downloadURL);
+                    db.doc().set({
+                            year: uploadMultipleYear,
+                            url: downloadURL,
+                            description: "",
+                        }, {
+                            merge: true
+                        })
+                        .then(function () {
+                            console.log("Data Saved");
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+
+
                 });
             }
         );
