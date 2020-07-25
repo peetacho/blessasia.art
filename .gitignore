@@ -63,3 +63,11 @@ node_modules/
 
 # dotenv environment variables file
 .env
+*.pdf
+*.mp4
+*.jpg
+*.JPG
+*.jpeg
+*.png
+*.DS_Store
+public/js/firebaseConfig.js
