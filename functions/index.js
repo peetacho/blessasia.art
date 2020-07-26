@@ -19,7 +19,7 @@ exports.sendEmailNotification = functions.firestore
             .sendMail({
                 from: `${data.email}`,
                 to: "hkartgearcontact@gmail.com, hkartgear@biznetvigator.com",
-                subject: `[BlESS ASIA] ${data.subject}`,
+                subject: `[BLESS ASIA] ${data.subject}`,
                 text: `名字: ${data.name} \n電郵地址: ${data.email} \n\n信息: ${data.message}`,
             })
             .then((res) => console.log("Email sent succesfully!"))

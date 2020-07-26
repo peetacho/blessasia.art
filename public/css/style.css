@@ -1,6 +1,6 @@
 :root {
     font-size: 16px;
-    font-family: 'STHeiti';
+    font-family: 'Noto Sans TC', sans-serif;
     font-weight: 300;
     line-height: 1.5;
     --text-heading: ;
@@ -140,7 +140,6 @@ nav {
     margin: 0;
 }
 
-
 .text p {
     text-align: left;
 }
@@ -148,6 +147,11 @@ nav {
 .text h2 {
     text-align: left;
 }
+
+.text h3 {
+    text-align: left;
+}
+
 
 .text h5 {
     text-align: left;

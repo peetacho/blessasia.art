@@ -34,7 +34,7 @@ function collectGallery() {
             // doc.data() is never undefined for query doc snapshots
             // console.log(doc.id, " => ", doc.data());
             var dd = doc.data();
-            createGalDiv(dd.year, dd.description, dd.url, uploadTheMainType);
+            createGalDiv(dd.year, dd.description, dd.url, uploadTheMainType, dd.count);
         });
     });
 }
@@ -66,13 +66,13 @@ function collectCeremony() {
             var dd = doc.data();
 
             // type is year
-            createCerDiv(dd.title, dd.year, dd.mainUrl, uploadTheMainType, dd.imageLength);
+            createCerDiv(dd.title, dd.year, dd.mainUrl, uploadTheMainType, dd.imageLength, dd.count);
         });
     });
 
 }
 
-function createGalDiv(Year, Description, Url, CollectionName) {
+function createGalDiv(Year, Description, Url, CollectionName, Count) {
     var div = document.createElement('div');
     div.setAttribute('class', `column-photo ${Year} show`);
 
@@ -86,7 +86,7 @@ function createGalDiv(Year, Description, Url, CollectionName) {
                     <img src="${Url}" style ="   width: 100% !important;    
                     height: auto !important; ">
                     <div class="content-text text">
-                        <h5>${Year}</h5>
+                        <h3>${Year} ${Count}</h3>
                         <p>${Description}</p>
                     </div>
                 </a>
@@ -152,7 +152,7 @@ function getTitle(Title, CollectionName, ImageLength) {
     console.log('Image length is set to: ', imageLength);
 }
 
-function createCerDiv(Title, Year, MainUrl, CollectionName, ImageLength) {
+function createCerDiv(Title, Year, MainUrl, CollectionName, ImageLength, Count) {
     // create a div element
     var div = document.createElement('div');
     div.setAttribute('class', `column-photo ${Year} show`);
@@ -169,7 +169,8 @@ function createCerDiv(Title, Year, MainUrl, CollectionName, ImageLength) {
                         background-color: white !important;">
 
                         <div class="text">
-                            <h2>${Year} 開幕式</h2>
+                            <h2>${Year} ${Count}</h2>
+                            <h3>祝福亞洲-基督徒視覺藝術雙年展 開幕式</h3>
                             <p>${Title}</p>
                         </div>
 

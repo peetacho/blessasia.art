@@ -48,7 +48,7 @@ function uploadFile() {
     // let uploadType = document.querySelector('#uploadType');
     let uploadYear = document.querySelector('#uploadYear');
     let uploadDescription = document.querySelector('#uploadDescription');
-
+    let uploadCount = document.querySelector('#uploadCount').value;
     let uploadMainType = document.querySelector('#uploadMainType');
 
     var uploadTheMainType = '';
@@ -100,17 +100,12 @@ function uploadFile() {
             // Upload completed successfully, now we can get the download URL
             uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
 
-                // let galleryUploadTitle = uploadTitle.value;
-                // let galleryUploadText = uploadText.value;
-                // let galleryUploadType = uploadType.value;
                 let galleryYear = uploadYear.value;
                 let galleryUploadDescription = uploadDescription.value;
 
                 //Access Database
                 db.doc().set({
-                        // title: galleryUploadTitle,
-                        // text: galleryUploadText,
-                        // type: galleryUploadType,
+                        count: uploadCount,
                         year: galleryYear,
                         url: downloadURL,
                         description: galleryUploadDescription
@@ -137,6 +132,8 @@ function uploadMultiple() {
     let uploadMultipleTitle = document.querySelector('#uploadMultipleTitle').value;
     let uploadMultipleYear = document.querySelector('#uploadMultipleYear').value;
     let uploadMultipleVideoLink = document.querySelector('#uploadMultipleVideoLink').value;
+    let uploadMultipleCount = document.querySelector('#uploadMultipleCount').value;
+
 
     // let uploadMultipleType = document.querySelector('#uploadMultipleType').value;
     // let uploadMultipleDescription = document.querySelector('#uploadMultipleDescription').value;
@@ -152,12 +149,12 @@ function uploadMultiple() {
                 var mainFile = mainImage[0];
                 console.log('OpenCeremony');
                 uploadTheMainType = 'OpenCeremony';
-                uploadImageAsPromise(mainFile, imageFile, i, uploadMultipleTitle, uploadMultipleYear, image.length, uploadMultipleVideoLink, uploadMultipleMainType);
+                uploadImageAsPromise(mainFile, imageFile, i, uploadMultipleTitle, uploadMultipleYear, image.length, uploadMultipleVideoLink, uploadMultipleMainType, uploadMultipleCount);
                 break;
             case 'Exhibitions':
                 console.log('Exhibitions')
                 uploadTheMainType = 'Exhibitions';
-                uploadImageAsPromiseExhibitions(imageFile, uploadMultipleYear, uploadMultipleMainType);
+                uploadImageAsPromiseExhibitions(imageFile, uploadMultipleYear, uploadMultipleMainType, uploadMultipleCount);
                 break;
         }
     }
@@ -166,7 +163,7 @@ function uploadMultiple() {
 var indexUploaded;
 
 //Handle waiting to upload each file using promise
-function uploadImageAsPromise(mainFile, imageFile, index, uploadMultipleTitle, uploadMultipleYear, imageLength, uploadMultipleVideoLink, uploadMultipleMainType) {
+function uploadImageAsPromise(mainFile, imageFile, index, uploadMultipleTitle, uploadMultipleYear, imageLength, uploadMultipleVideoLink, uploadMultipleMainType, uploadMultipleCount) {
     return new Promise(function (resolve, reject) {
         var storageRef = firebase.storage().ref(uploadMultipleMainType.toLowerCase() + '/' + imageFile.name);
 
@@ -206,7 +203,8 @@ function uploadImageAsPromise(mainFile, imageFile, index, uploadMultipleTitle, u
                                 year: uploadMultipleYear,
                                 mainUrl: downloadURL,
                                 linkVid: uploadMultipleVideoLink,
-                                imageLength: imageLength
+                                imageLength: imageLength,
+                                count: uploadMultipleCount
                             }, {
                                 merge: true
                             })
@@ -254,7 +252,7 @@ function uploadImageAsPromise(mainFile, imageFile, index, uploadMultipleTitle, u
     });
 }
 
-function uploadImageAsPromiseExhibitions(imageFile, uploadMultipleYear, uploadMultipleMainType) {
+function uploadImageAsPromiseExhibitions(imageFile, uploadMultipleYear, uploadMultipleMainType, uploadMultipleCount) {
     return new Promise(function (resolve, reject) {
         var storageRef = firebase.storage().ref('exhibitions/' + imageFile.name);
 
@@ -285,6 +283,7 @@ function uploadImageAsPromiseExhibitions(imageFile, uploadMultipleYear, uploadMu
                             year: uploadMultipleYear,
                             url: downloadURL,
                             description: "",
+                            count: uploadMultipleCount
                         }, {
                             merge: true
                         })
