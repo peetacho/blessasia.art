@@ -1,3 +1,4 @@
 # blessasia.art
 
-Dad's website
+Freelancing web development for my dad.
+Link: https://blessasia.art/
