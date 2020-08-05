@@ -164,7 +164,7 @@ nav {
 
 /* The "show" class is added to the filtered elements */
 .show {
-    display: block;
+    display: block !important;
 }
 
 #myBtnContainer {
@@ -468,6 +468,7 @@ nav {
 .about-section {
     width: 100%;
     padding: 40px 0;
+    display: none;
 }
 
 .inner-width {
