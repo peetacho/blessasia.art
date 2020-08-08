@@ -21,10 +21,11 @@ function collectCeremonyGallery() {
         if (doc.exists) {
             var dd = doc.data();
 
-            if (dd.linkVid) {
-
-                createCeremonyVideoDiv(getEmbedLink(dd.linkVid));
+            for (var i = 0; i < dd.vidLength; i++) {
+                createCeremonyVideoDiv(getEmbedLink(dd[i + 'linkVid']));
             }
+
+            if (dd.linkVid) {}
 
             for (var i = 0; i < dd.imageLength; i++) {
 

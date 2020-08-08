@@ -172,6 +172,9 @@ function uploadImageAsPromise(mainFile, imageFile, index, uploadMultipleTitle, u
         const db = firestore.collection(uploadMultipleMainType);
         var task;
 
+        var links = uploadMultipleVideoLink.split('///');
+
+
         if (index == 0) {
             //Upload file
             task = storageRef.put(mainFile);
@@ -198,11 +201,13 @@ function uploadImageAsPromise(mainFile, imageFile, index, uploadMultipleTitle, u
                     // console.log('File available at', downloadURL);
 
                     if (index == 0) {
+
+                        // adds main stuff
                         db.doc(uploadMultipleYear + " " + uploadMultipleTitle).set({
                                 title: uploadMultipleTitle,
                                 year: uploadMultipleYear,
                                 mainUrl: downloadURL,
-                                linkVid: uploadMultipleVideoLink,
+                                vidLength: links.length,
                                 imageLength: imageLength,
                                 count: uploadMultipleCount
                             }, {
@@ -215,9 +220,26 @@ function uploadImageAsPromise(mainFile, imageFile, index, uploadMultipleTitle, u
                             .catch(function (error) {
                                 console.log(error);
                             });
+
+                        // adds video links
+                        for (var j = 0; j < links.length; j++) {
+                            db.doc(uploadMultipleYear + " " + uploadMultipleTitle).set({
+                                    [j + 'linkVid']: links[j],
+                                }, {
+                                    merge: true
+                                })
+                                .then(function () {
+                                    console.log("Data Saved");
+                                    indexUploaded++;
+                                })
+                                .catch(function (error) {
+                                    console.log(error);
+                                });
+
+                        }
                     }
 
-                    //Access Database
+                    //uploads remaining images. 
                     db.doc(uploadMultipleYear + " " + uploadMultipleTitle).set({
                             [index + 'url']: downloadURL
                         }, {

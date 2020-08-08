@@ -169,7 +169,6 @@ nav {
 
 #myBtnContainer {
     float: left;
-    display: flex;
     flex-direction: row;
 }
 
