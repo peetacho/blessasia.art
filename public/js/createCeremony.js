@@ -29,7 +29,7 @@ function collectCeremonyGallery() {
 
             for (var i = 0; i < dd.imageLength; i++) {
 
-                createCeremonyGalDiv(dd.year, dd[i + 'url'], uploadTheMainType);
+                createCeremonyGalDiv(dd.year, dd[i + 'url'], uploadTheMainType, i + 'url');
             }
         } else {
             // doc.data() will be undefined in this case
@@ -67,7 +67,7 @@ width="100%" height="500px"></iframe>
     document.getElementById('ceremony-video').append(div);
 }
 
-function createCeremonyGalDiv(Year, Url, CollectionName) {
+function createCeremonyGalDiv(Year, Url, CollectionName, indexUrl) {
     var div = document.createElement('div');
     div.setAttribute('class', `column-photo ${Year} show`);
 
@@ -78,7 +78,7 @@ function createCeremonyGalDiv(Year, Url, CollectionName) {
             <button class="content-text" id="productBtn"
                 onclick="getImageSrc('${Url}','${CollectionName}')">
                 <a href="Image.html" style="text-decoration: none; color: black;">
-                    <img src="${Url}" style ="   width: 100% !important;    
+                    <img src="${Url}" id="indexUrl" style ="   width: 100% !important;    
                     height: auto !important; ">
                 </a>
             </button>
