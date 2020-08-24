@@ -1,183 +1,383 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700&display=swap"
-        rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>Bless Asia</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <div class="logo">
-            <h4>
-                <a href="index.html">Bless Asia</a>
-            </h4>
-        </div>
-        <ul class="nav-links">
-            <li><a href="About.html" style="font-weight: bold;">關於</a></li>
-            <li><a href="Exhibitions.html">展覽</a></li>
-            <li><a href="OpenCeremony.html">開幕式</a></li>
-            <li><a href="ArtworkSubmission.html">徵稿</a></li>
-            <li><a href="Contact.html">聯絡</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
+      <div class="logo">
+        <h4>
+          <a href="index.html">Bless Asia</a>
+        </h4>
+      </div>
+      <ul class="nav-links">
+        <li><a href="About.html" style="font-weight: bold;">關於</a></li>
+        <li><a href="Exhibitions.html">展覽</a></li>
+        <li><a href="OpenCeremony.html">開幕式</a></li>
+        <li><a href="ArtworkSubmission.html">徵稿</a></li>
+        <li><a href="Contact.html">聯絡</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
     </nav>
 
     <section class="page-content">
+      <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')">
+          <i class="fas fa-border-all"></i>
+          所有
+        </button>
+        <button class="btn" onclick="filterSelection('2023')">2023</button>
+        <button class="btn" onclick="filterSelection('2021')">2021</button>
+        <button class="btn" onclick="filterSelection('2019')">2019</button>
+        <button class="btn" onclick="filterSelection('2017')">2017</button>
+      </div>
 
-        <div id="myBtnContainer">
-            <button class="btn active" onclick="filterSelection('all')">
-                <i class="fas fa-border-all"></i>
-                所有
-            </button>
-            <button class="btn" onclick="filterSelection('2023')">2023</button>
-            <button class="btn" onclick="filterSelection('2021')">2021</button>
-            <button class="btn" onclick="filterSelection('2019')">2019</button>
-            <button class="btn" onclick="filterSelection('2017')">2017</button>
-        </div>
+      <br />
+      <br />
+      <br />
 
-        <br>
-        <br>
-        <br>
-
-        <div class="about-section 2019 show" style="padding-top: 10px;">
-            <div class="inner-width">
-                <div class="row">
-                    <div class="column about-text">
-                        <h1 style="padding-top: 23px; margin: 0; text-align: left;">
-                            2019 第二屆藝術展（香港）
-                        </h1>
-                        <p style="text-align: left; margin: 0;">
-                            新加坡「祝福亞洲」藝術展：美好之作 Beautiful Made 當地宣傳海報。
-                        </p>
-                    </div>
-                    <div class="column about-image">
-                        <embed src="pics/About/2019_1.pdf" width="100%" height="500px">
-                        <a href="pics/About/2019_1.pdf" target="_blank">瀏覽</a>
-                    </div>
-                </div>
+      <div class="about-section 2019 show" style="padding-top: 10px;">
+        <div class="inner-width">
+          <div class="row">
+            <div class="column about-text">
+              <h1 style="padding-top: 23px; margin: 0; text-align: left;">
+                2019 第二屆藝術展（新加坡）
+              </h1>
+              <p style="text-align: left; margin: 0;">
+                新加坡「祝福亞洲」藝術展：美好之作 Beautiful Made 當地宣傳海報。
+              </p>
             </div>
-        </div>
-
-        <div class="about-section 2019 show" style="padding-top: 10px;">
-            <div class="inner-width">
-                <div class="row">
-                    <div class="column about-text">
-                        <h1 style="padding-top: 23px; margin: 0; text-align: left;">
-                            2019 第二屆藝術展（香港）
-                        </h1>
-                        <p style="text-align: left; margin: 0;">
-                            新加坡「祝福亞洲」藝術展：美好之作 Beautiful Made 的宣傳電子海報一。
-                        </p>
-                    </div>
-                    <div class="column about-image">
-                        <!-- <img src="pics/About/poster.jpg" width="100%" height="100%"> -->
-
-                        <embed src="pics/About/2019_2.pdf" width="100%" height="500px">
-                        <a href="pics/About/2019_2.pdf" target="_blank">瀏覽</a>
-                    </div>
-                </div>
+            <div class="column about-image">
+              <embed src="pics/About/2019_1.pdf" width="100%" height="500px" />
+              <a href="pics/About/2019_1.pdf" target="_blank">瀏覽</a>
             </div>
+          </div>
         </div>
+      </div>
 
-        <div class="about-section 2019 show" style="padding-top: 10px;">
-            <div class="inner-width">
-                <div class="row">
-                    <div class="column about-text">
-                        <h1 style="padding-top: 23px; margin: 0; text-align: left;">
-                            2019 第二屆藝術展（香港）
-                        </h1>
-                        <p style="text-align: left; margin: 0;">
-                            新加坡「祝福亞洲」藝術展：美好之作 Beautiful Made 的宣傳電子海報二。
-                        </p>
-                    </div>
-                    <div class="column about-image">
-                        <embed src="pics/About/2019_3.pdf" width="100%" height="500px">
-                        <a href="pics/About/2019_3.pdf" target="_blank">瀏覽</a>
-                    </div>
-                </div>
+      <div class="about-section 2019 show" style="padding-top: 10px;">
+        <div class="inner-width">
+          <div class="row">
+            <div class="column about-text">
+              <h1 style="padding-top: 23px; margin: 0; text-align: left;">
+                2019 第二屆藝術展（新加坡）
+              </h1>
+              <p style="text-align: left; margin: 0;">
+                新加坡「祝福亞洲」藝術展：美好之作 Beautiful Made
+                的宣傳電子海報一。
+              </p>
+
+              <h5 style="text-align: left;">新加坡</h5>
+              <div class="names" style="column-count: 3;">
+                <span style="text-align: left;">ANN PNG HWEE ENG</span>
+                <span style="text-align: left;">BERNICE LAU LI YUA</span>
+                <span style="text-align: left;">CAROLYN CHEW</span>
+                <span style="text-align: left;">DEBORAH CHAN</span>
+                <span style="text-align: left;">EVE ONG</span>
+                <span style="text-align: left;">FERNIE CHAN</span>
+                <span style="text-align: left;">HENG SWEE KIANG</span>
+                <span style="text-align: left;">HO KAR HUI SHIRLEY</span>
+                <span style="text-align: left;">IRENE WONG</span>
+                <span style="text-align: left;">KATHERINE OH WEI LUN</span>
+                <span style="text-align: left;">KAY KOK CHUNG-OI</span>
+                <span style="text-align: left;">KELVIN SEAH</span>
+                <span style="text-align: left;">LIM TZE PENG</span>
+                <span style="text-align: left;">LIM WIN NIE</span>
+                <span style="text-align: left;">LOH SAU KUEN</span>
+                <span style="text-align: left;">NAMIKO CHAN TAKAHASHI</span>
+                <span style="text-align: left;">SAMUEL TEO</span>
+                <span style="text-align: left;">SUSANNA SUN LIYAN</span>
+                <span style="text-align: left;">VICTOR TAN WEE TAR</span>
+                <span style="text-align: left;">WONG SHIH YAW</span>
+                <span style="text-align: left;">YAP KHENG KIN</span>
+                <span style="text-align: left;">YEOW CHUAN PEI</span>
+                <span style="text-align: left;">GERALDINE YU TSZ HSIN</span>
+                <span style="text-align: left;">MELEY LAW</span>
+              </div>
+              <h5 style="text-align: left;">香港</h5>
+              <div class="names">
+                <span>陳國棟</span>
+                <span>張美玉</span>
+                <span>劉黃彩燈</span>
+                <span>黎思思</span>
+                <span>周文志</span>
+                <span>呂彩嫺</span>
+
+                <span>吳燕玲</span>
+                <span>張子敏</span>
+                <span>陳子賢</span>
+                <span>黃靜如</span>
+                <span>游梅珍</span>
+              </div>
+              <h5 style="text-align: left;">中國</h5>
+              <div class="names">
+                <span>鮑軍濤</span>
+                <span>黑天爍</span>
+                <span>黃斌 </span> <span>沈忻 </span>
+              </div>
+
+              <h5 style="text-align: left;">澳門</h5>
+              <div class="names">
+                <span>官宏滔</span>
+                <span>吳建華</span>
+              </div>
+
+              <h5 style="text-align: left;">台灣</h5>
+              <div class="names">
+                <span>張慧芳 </span>
+                <span>林東生</span>
+              </div>
+              <h5 style="text-align: left;">馬來西亞</h5>
+              <div class="names">
+                <span>張美芳</span>
+                <span>馬愛真</span>
+                <span>葉永盛</span>
+              </div>
+              <h5 style="text-align: left;">加拿大</h5>
+              <div class="names">
+                <span>林梅琪</span>
+                <span>馮草非</span>
+              </div>
+              <h5 style="text-align: left;">美國</h5>
+              <div class="names">
+                <span>何崇謙</span>
+              </div>
             </div>
-        </div>
+            <div class="column about-image">
+              <!-- <img src="pics/About/poster.jpg" width="100%" height="100%"> -->
 
-        <div class="about-section 2017 show" style="padding-top: 10px;">
-            <div class="inner-width">
-                <div class="row">
-                    <div class="column about-text">
-                        <h1 style="padding-top: 23px; margin: 0; text-align: left;">
-                            2017 第一屆藝術展（香港）
-                        </h1>
-                        <p style="text-align: left; margin: 0;">
-                            這一張邀請咭成為眾人爭先搶收和收藏紀念的作品！
-                        </p>
-                    </div>
-                    <div class="column about-image">
-                        <embed src="pics/About/invitation_card.pdf" width="100%" height="500px">
-                        <a href="pics/About/invitation_card.pdf" target="_blank">瀏覽</a>
-                    </div>
-                </div>
+              <embed src="pics/About/2019_2.pdf" width="100%" height="650px" />
+              <a href="pics/About/2019_2.pdf" target="_blank">瀏覽</a>
             </div>
+          </div>
         </div>
+      </div>
 
-        <div class="about-section 2017 show" style="padding-top: 10px;">
-            <div class="inner-width">
-                <div class="row">
-                    <div class="column about-text">
-                        <h1 style="padding-top: 23px; margin: 0; text-align: left;">
-                            2017 第一屆藝術展（香港）
-                        </h1>
-                        <p style="text-align: left; margin: 0;">
-                            這是大會的海報設計，廣泛郵寄到全香港的教會，基督教學校及基督教團體。
-                        </p>
-                    </div>
-                    <div class="column about-image">
-                        <!-- <img src="pics/About/poster.jpg" width="100%" height="100%"> -->
-
-                        <embed src="pics/About/poster.pdf" width="100%" height="500px">
-                        <a href="pics/About/poster.pdf" target="_blank">瀏覽</a>
-                    </div>
-                </div>
+      <div class="about-section 2019 show" style="padding-top: 10px;">
+        <div class="inner-width">
+          <div class="row">
+            <div class="column about-text">
+              <h1 style="padding-top: 23px; margin: 0; text-align: left;">
+                2019 第二屆藝術展（新加坡）
+              </h1>
+              <p style="text-align: left; margin: 0;">
+                新加坡「祝福亞洲」藝術展：美好之作 Beautiful Made
+                的宣傳電子海報二。
+              </p>
             </div>
-        </div>
-
-        <div class="about-section 2017 show" style="padding-top: 10px;">
-            <div class="inner-width">
-                <div class="row">
-                    <div class="column about-text">
-                        <h1 style="padding-top: 23px; margin: 0; text-align: left;">
-                            2017 第一屆藝術展（香港）
-                        </h1>
-                        <p style="text-align: left; margin: 0;">
-                            這是2017年第一屆祝福亞洲藝術展的宣傳影片，邀請了不同的牧者，學者，藝術家等為藝術展發言；呼籲參展和參觀。
-                        </p>
-                    </div>
-                    <div class="column about-image">
-                        <video width="100%" height="100%" controls>
-                            <source src="pics/About/Promotion video 宣傳短片 2017.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
+            <div class="column about-image">
+              <embed src="pics/About/2019_3.pdf" width="100%" height="500px" />
+              <a href="pics/About/2019_3.pdf" target="_blank">瀏覽</a>
             </div>
+          </div>
         </div>
+      </div>
 
+      <div class="about-section 2017 show" style="padding-top: 10px;">
+        <div class="inner-width">
+          <div class="row">
+            <div class="column about-text">
+              <h1 style="padding-top: 23px; margin: 0; text-align: left;">
+                2017 第一屆藝術展（香港）
+              </h1>
+              <p style="text-align: left; margin: 0;">
+                這一張邀請咭成為眾人爭先搶收和收藏紀念的作品！
+              </p>
+
+              <br />
+
+              <h4 style="text-align: left;">參展者名單</h4>
+              <h5 style="text-align: left;">香港</h5>
+
+              <div class="names">
+                <span>陳子超</span>
+                <span>陳芷軒</span>
+                <span>陳穎昭</span>
+                <span>陳慧儀</span>
+                <span>陳偉恒</span>
+                <span>張佩珊</span>
+                <span>周文志</span>
+                <span>何婉慧</span>
+                <span>郭志立</span>
+                <span>賴維鈞</span>
+                <span>黎思思</span>
+                <span>林嘉善</span>
+                <span>林樂婷</span>
+                <span>羅靜欣</span>
+                <span>李廣添</span>
+                <span>廖文彬</span>
+                <span>盧鈺淇</span>
+                <span>譚媄文</span>
+                <span>唐錦騰</span>
+                <span>曾皿堅</span>
+                <span>謝樂柔</span>
+                <span>徐偉明</span>
+                <span>黃靜如</span>
+                <span>黃喜蓮</span>
+                <span>黃儉儀</span>
+                <span>黃恩約</span>
+                <span>尤偉海</span>
+                <span>何偉力</span>
+                <span>吳燕玲</span>
+                <span>李麗池</span>
+                <span>施德燕</span>
+                <span>胡燕青</span>
+                <span>陳芝瑛</span>
+                <span>陳國昌</span>
+                <span>陳國楝</span>
+                <span>梁友東</span>
+                <span>張美玉</span>
+                <span>梁麗橋</span>
+                <span>湛世銘</span>
+                <span>黃靈悦</span>
+                <span>劉玉蓮</span>
+                <span>K.S. Lam</span>
+                <span>劉盛剛</span>
+                <span>南希</span>
+                <span>黃永順</span>
+                <span>王惠娟</span>
+                <span>林琬蔚</span>
+                <span>黃昭瀅</span>
+                <span>楊虎男</span>
+                <span>劉金紅</span>
+                <span>孫瑞璘</span>
+                <span>劉黃彩燈</span>
+              </div>
+
+              <h5 style="text-align: left;">中國</h5>
+              <div class="names">
+                <span>王艾婷</span>
+                <span>刑素引</span>
+                <span>沈忻</span>
+                <span>范龍龍</span>
+                <span>李艷玲</span>
+                <span>島子</span>
+                <span>張書良</span>
+                <span>黑天爍</span>
+                <span>黃斌</span>
+                <span>衛林</span>
+                <span>鮑軍濤</span>
+                <!-- <span style="color: var(--bg-primary);">鮑軍濤</span> -->
+              </div>
+              <h5 style="text-align: left;">澳門</h5>
+              <div class="names">
+                <span>鄭心怡</span>
+                <span>譚志勝</span>
+              </div>
+
+              <h5 style="text-align: left;">加拿大</h5>
+              <div class="names">
+                <span>羅灃茹</span>
+                <span>Jasmine Luk</span>
+                <span>游榮光</span>
+              </div>
+
+              <h5 style="text-align: left;">馬來西亞</h5>
+              <div class="names">
+                <span>關元慶</span>
+                <span>盤玉卿</span>
+              </div>
+
+              <h5 style="text-align: left;">台灣</h5>
+              <div class="names">
+                <span>蘿艾絲拉妲</span>
+                <span>呂百森</span>
+                <span>張蓬潔</span>
+              </div>
+
+              <h5 style="text-align: left;">印尼</h5>
+              <div class="names">
+                <span>Yongky Gatot Subiantoro</span>
+              </div>
+
+              <h5 style="text-align: left;">美國</h5>
+              <div class="names">
+                <span>何崇謙</span>
+              </div>
+              <h5 style="text-align: left;">新加坡</h5>
+              <div class="names">
+                <span>余梓新</span>
+              </div>
+            </div>
+            <div class="column about-image">
+              <embed
+                src="pics/About/invitation_card.pdf"
+                width="100%"
+                height="850px"
+              />
+              <a href="pics/About/invitation_card.pdf" target="_blank">瀏覽</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section 2017 show" style="padding-top: 10px;">
+        <div class="inner-width">
+          <div class="row">
+            <div class="column about-text">
+              <h1 style="padding-top: 23px; margin: 0; text-align: left;">
+                2017 第一屆藝術展（香港）
+              </h1>
+              <p style="text-align: left; margin: 0;">
+                這是大會的海報設計，廣泛郵寄到全香港的教會，基督教學校及基督教團體。
+              </p>
+            </div>
+            <div class="column about-image">
+              <!-- <img src="pics/About/poster.jpg" width="100%" height="100%"> -->
+
+              <embed src="pics/About/poster.pdf" width="100%" height="500px" />
+              <a href="pics/About/poster.pdf" target="_blank">瀏覽</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section 2017 show" style="padding-top: 10px;">
+        <div class="inner-width">
+          <div class="row">
+            <div class="column about-text">
+              <h1 style="padding-top: 23px; margin: 0; text-align: left;">
+                2017 第一屆藝術展（香港）
+              </h1>
+              <p style="text-align: left; margin: 0;">
+                這是2017年第一屆祝福亞洲藝術展的宣傳影片，邀請了不同的牧者，學者，藝術家等為藝術展發言；呼籲參展和參觀。
+              </p>
+            </div>
+            <div class="column about-image">
+              <video width="100%" height="100%" controls>
+                <source
+                  src="pics/About/Promotion video 宣傳短片 2017.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Nav Bar-->
     <div class="footer">
-        <div class="footer-bottom">
-            &copy; <script>
-                document.write(new Date().getFullYear());
-            </script> blessasia.art | Powered by Hong Kong Art Gear
-        </div>
+      <div class="footer-bottom">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        blessasia.art | Powered by Hong Kong Art Gear
+      </div>
     </div>
-
 
     <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-functions.js"></script>
@@ -189,6 +389,5 @@
     <script src="js/create.js"></script>
     <script src="js/nextAbout.js"></script>
     <script src="js/slide.js"></script>
-</body>
-
+  </body>
 </html>

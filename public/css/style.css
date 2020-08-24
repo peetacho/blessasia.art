@@ -115,7 +115,7 @@ nav {
 }
 
 .row-photo,
-.row-photo > .column-photo {
+.row-photo>.column-photo {
   padding: 8px;
   width: 100%;
   /* margin: auto; */
@@ -210,6 +210,29 @@ nav {
 
 .ceremony-link-vid {
   width: 60%;
+}
+
+/* #endregion */
+
+/*#region <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ABOUT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.about-text h4 {
+  margin: 0;
+}
+
+.about-text h5 {
+  margin: 0;
+}
+
+.names {
+  /* display: block; */
+  column-count: 5;
+  /* column-gap: 50px; */
+  margin: 0;
+}
+
+.names span {
+  display: block;
 }
 
 /* #endregion */
@@ -517,6 +540,7 @@ nav {
 
 /* small screens */
 @media screen and (max-width: 670px) {
+
   html,
   body {
     max-width: 100%;
@@ -594,7 +618,7 @@ nav {
   }
 
   .row-photo,
-  .row-photo > .column-photo {
+  .row-photo>.column-photo {
     padding: 4px;
     margin: 0;
   }
