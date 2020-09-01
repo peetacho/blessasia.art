@@ -115,7 +115,7 @@ nav {
 }
 
 .row-photo,
-.row-photo>.column-photo {
+.row-photo > .column-photo {
   padding: 8px;
   width: 100%;
   /* margin: auto; */
@@ -540,7 +540,6 @@ nav {
 
 /* small screens */
 @media screen and (max-width: 670px) {
-
   html,
   body {
     max-width: 100%;
@@ -564,8 +563,13 @@ nav {
 
   .names {
     /* display: block; */
-    column-count: 3;
+    column-count: 2;
     /* column-gap: 50px; */
+    margin: 0;
+  }
+
+  .names-english {
+    column-count: 1 !important;
     margin: 0;
   }
 
@@ -625,7 +629,7 @@ nav {
   }
 
   .row-photo,
-  .row-photo>.column-photo {
+  .row-photo > .column-photo {
     padding: 4px;
     margin: 0;
   }
